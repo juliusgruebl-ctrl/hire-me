@@ -7,10 +7,20 @@
   <meta name="description" content="Julius Gruebl — commis de cuisine saisonnier. CV, vidéo et contact." />
   <style>
     :root{
-      --bg:#0b1020; --card:#0f1726; --muted:#9aa4b2; --accent:#ff6b35; --text:#e6eef6;
-      --radius:12px; --gap:14px; font-family: Inter, Roboto, Arial, sans-serif;
+      --bg:#071226;         /* uniform dark-blue background */
+      --card:#0f1726;
+      --muted:#9aa4b2;
+      --accent:#ff6b35;
+      --text:#e6eef6;
+      --radius:12px;
+      --gap:14px;
+      font-family: Inter, Roboto, Arial, sans-serif;
     }
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#05060a 0%,#071226 100%);color:var(--text);-webkit-font-smoothing:antialiased}
+
+    /* Page background: ensure full viewport is dark-blue */
+    html { height: 100%; background-color: var(--bg); }
+    body { min-height: 100vh; margin: 0; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+
     .container{max-width:920px;margin:20px auto;padding:18px;}
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));border-radius:var(--radius);padding:16px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
     header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
@@ -50,7 +60,7 @@
       .video-thumb .play svg { width:24px; height:24px; }
     }
 
-    /* Other page styles kept simple */
+    /* Buttons and layout */
     .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
     .btn{flex:1 1 48%;display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:10px;text-decoration:none;font-weight:700;color:#0b0b0b;background:var(--text);box-shadow:0 6px 18px rgba(0,0,0,0.35)}
     .btn.secondary{background:transparent;color:var(--text);border:2px solid rgba(255,255,255,0.06)}
@@ -60,6 +70,9 @@
     .list li{margin:8px 0;color:var(--text)}
     .meta{font-size:13px;color:var(--muted);margin-top:10px}
     footer{margin-top:14px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* small readable paragraph style for profile */
+    .profile{color:var(--text);line-height:1.5;margin-top:10px;font-size:15px}
   </style>
 </head>
 <body>
@@ -69,7 +82,7 @@
         <div class="badge">JG</div>
         <div>
           <h1>Hire me — changement de carrière</h1>
-          <div class="subtitle">Commis de cuisine / préparation petits-déjeuners — saison d’hiver</div>
+          <div class="subtitle">Commis de cuisine / préparation petits‑déjeuners — saison d’hiver</div>
         </div>
       </header>
 
@@ -81,9 +94,7 @@
         <div class="video-wrap video-wrap--v" data-video-id="po2kqdABvOA" data-vertical="1" role="region" aria-label="Présentation courte video">
           <!-- thumbnail + custom play button (will be replaced by iframe on click) -->
           <div class="video-thumb" tabindex="0" aria-label="Lire la vidéo Présentation courte">
-            <!-- background image is set by JS using the YouTube thumbnail URL -->
             <div class="play" role="button" aria-label="Lire la vidéo Présentation courte">
-              <!-- simple triangle SVG -->
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
@@ -92,7 +103,7 @@
         <div class="ctas">
           <a class="btn" href="cv.pdf" target="_blank" rel="noopener" aria-label="Voir le CV dans un nouvel onglet">Voir le CV (nouvel onglet)</a>
           <a class="btn secondary" href="cv.pdf" download aria-label="Télécharger le CV au format PDF">Télécharger le CV</a>
-          <a class="btn secondary" href="mailto:juliuscuisine@posteo.com?subject=Contact%20via%20site&body=Bonjour%20Julius%2C%0A%0AJe%20vous%20contacte%20au%20sujet%20de%20...">Envoyer un e-mail</a>
+          <a class="btn secondary" href="mailto:devenircuisinier@xyz.com">Envoyer un e‑mail</a>
         </div>
       </section>
 
@@ -112,8 +123,8 @@
       <section aria-labelledby="long-title" style="margin-top:12px">
         <div id="long-title" style="font-weight:700;margin-bottom:10px">Présentation complète</div>
 
-        <!-- horizontal (16:9) wrapper -->
-        <div class="video-wrap video-wrap--h" data-video-id="R0CGgLYGQ6M" data-vertical="0" role="region" aria-label="Présentation complète video">
+        <!-- horizontal (16:9) wrapper; replaced with new video id -->
+        <div class="video-wrap video-wrap--h" data-video-id="u9wSHIU7XD8" data-vertical="0" role="region" aria-label="Présentation complète video">
           <div class="video-thumb" tabindex="0" aria-label="Lire la vidéo Présentation complète">
             <div class="play" role="button" aria-label="Lire la vidéo Présentation complète">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
@@ -121,7 +132,15 @@
           </div>
         </div>
 
-        <div class="meta">Disponible toute la saison d’hiver sauf du 27/12 au 06/01. Contact : juliuscuisine@posteo.com</div>
+        <!-- Short, clear profile text -->
+        <div class="profile">
+          <p>Bonjour, je m’appelle Julius Gruebl. J’ai 32 ans et je viens d’Allemagne.</p>
+          <p>Je cherche un poste pour la saison d’hiver dans les Alpes : commis de cuisine, préparation des petits‑déjeuners ou aide de cuisine.</p>
+          <p>Je suis en reconversion vers la cuisine et je prévois de commencer un CAP Cuisine en France l’année prochaine. Cet hiver, je souhaite acquérir une expérience concrète en brigade.</p>
+          <p>J’ai huit ans d’expérience à Berlin en amélioration des process et en gestion d’équipes. J’ai aussi travaillé en salle comme garçon et je connais le rythme du service.</p>
+          <p>Je suis rigoureux, organisé, fiable et j’apprends vite. Langues : allemand et anglais courants, français niveau avancé.</p>
+          <p>Disponible presque toute la saison d’hiver (sauf du 27 décembre au 6 janvier). Si mon profil vous intéresse, écrivez‑moi : devenircuisinier@xyz.com. Je suis prêt pour un entretien ou un essai en cuisine.</p>
+        </div>
       </section>
     </div>
 
@@ -141,7 +160,6 @@
         const thumbEl = wrap.querySelector('.video-thumb');
 
         // Build a good thumbnail URL. For shorts vertical, maxres may not exist; fall back.
-        // Prefer maxresdefault, then sddefault, then hqdefault.
         const thumbUrls = [
           `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`,
           `https://i.ytimg.com/vi/${id}/sddefault.jpg`,
@@ -151,14 +169,11 @@
         // Pre-test images to pick the first existing one to avoid broken bg image.
         (function pickThumb(urls, index = 0) {
           if (!urls[index]) {
-            // fallback transparent background if none exist
             thumbEl.style.backgroundColor = '#000';
             return;
           }
           const img = new Image();
           img.onload = function(){
-            // good image (not the default 120x90 placeholder)
-            // on some cases maxresdefault returns a 120x90 fallback image; we do a size check:
             if (img.width && img.width >= 300) {
               thumbEl.style.backgroundImage = `url("${urls[index]}")`;
             } else {
@@ -169,15 +184,13 @@
           img.src = urls[index];
         })(thumbUrls);
 
-        // Make the thumbnail clickable/keyboard accessible
+        // insert iframe when user interacts
         function insertIframe(autoplay = true) {
-          // Build src with autoplay only after user interaction to avoid autoplay blocking
           const params = new URLSearchParams({
             rel: '0',
             modestbranding: '1',
             playsinline: '1',
             iv_load_policy: '3',
-            // If autoplay is requested, try to autoplay muted so browsers allow it
             autoplay: autoplay ? '1' : '0',
             mute: autoplay ? '1' : '0',
           });
@@ -190,7 +203,6 @@
           iframe.className = 'video-iframe';
           iframe.title = wrap.getAttribute('aria-label') || 'YouTube video';
 
-          // replace the thumbnail node with the iframe
           wrap.innerHTML = '';
           wrap.appendChild(iframe);
         }
@@ -208,7 +220,6 @@
           }
         });
 
-        // show focus outline for keyboard users
         thumbEl.addEventListener('focus', function(){ thumbEl.style.outline = '2px solid rgba(255,255,255,0.12)'; });
         thumbEl.addEventListener('blur', function(){ thumbEl.style.outline = 'none'; });
       });
