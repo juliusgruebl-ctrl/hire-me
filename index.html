@@ -103,7 +103,7 @@
         <div class="ctas">
           <a class="btn" href="cv.pdf" target="_blank" rel="noopener" aria-label="Voir le CV dans un nouvel onglet">Voir le CV (nouvel onglet)</a>
           <a class="btn secondary" href="cv.pdf" download aria-label="Télécharger le CV au format PDF">Télécharger le CV</a>
-          <a class="btn secondary" href="mailto:juliuscuisine@posteo.com">Envoyer un e‑mail</a>
+          <a id="mailto-link" class="btn secondary" href="mailto:juliuscuisine@posteo.com?subject=Contact%20depuis%20le%20site" aria-label="Envoyer un e‑mail">Envoyer un e‑mail</a>
         </div>
       </section>
 
@@ -224,6 +224,20 @@
         thumbEl.addEventListener('blur', function(){ thumbEl.style.outline = 'none'; });
       });
     })();
+  </script>
+
+  <script>
+  (function(){
+    var a = document.getElementById('mailto-link');
+    if (!a) return;
+    a.addEventListener('click', function(e){
+      // Some Android browsers / Gmail handle mailto poorly when handed via intent.
+      // Force the browser to navigate to the mailto: URI which reliably opens the composer with the recipient.
+      window.location.href = a.href;
+      // Prevent default to avoid double navigation in some browsers.
+      e.preventDefault();
+    });
+  })();
   </script>
 </body>
 </html>
